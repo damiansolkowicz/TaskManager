@@ -1,5 +1,6 @@
 package pl.coderslab;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
@@ -30,6 +31,8 @@ public class Main {
                     newTask();
                     break;
                 case "remove":
+                    removeRecord(tasks);
+                    System.out.println("Task was removed");
                     break;
                 case "list":
                     printTab(tasks);
@@ -96,8 +99,6 @@ public class Main {
 
     }
     public static void exit(String[][] tasks) {
-
-
         String line = null;
         try (PrintWriter printWriter = new PrintWriter(FILE_NAME)) {
             for (int i = 0; i < tasks.length; i++) {
@@ -107,6 +108,14 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("Error write to file");
         }
+    }
+    public static String[][] removeRecord(String[][] tasks){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Please tape number to remove");
+        String number=scanner.nextLine();
+        int numbe=Integer.parseInt(number);
+        tasks= ArrayUtils.remove(tasks,numbe);
+        return tasks;
     }
 
     public static String[][] addNewItem(String[][] arr, String[] arr2) {

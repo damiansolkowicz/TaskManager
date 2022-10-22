@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37152662-60fb-4479-8043-3df9307d40c4" name="Changes" comment="v4">
+    <list default="true" id="37152662-60fb-4479-8043-3df9307d40c4" name="Changes" comment="v5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" afterDir="false" />
     </list>
@@ -84,7 +84,7 @@
       <workItem from="1666382740690" duration="2244000" />
       <workItem from="1666384993172" duration="1471000" />
       <workItem from="1666386473688" duration="25000" />
-      <workItem from="1666386507787" duration="12699000" />
+      <workItem from="1666386507787" duration="14580000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1666376100287</created>
@@ -149,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666424682030</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v4">
+      <created>1666431799679</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666431799679</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +178,8 @@
     <MESSAGE value="Initial" />
     <MESSAGE value="v3" />
     <MESSAGE value="v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="v4" />
+    <MESSAGE value="v5" />
+    <option name="LAST_COMMIT_MESSAGE" value="v5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -182,7 +190,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java</url>
-          <line>15</line>
+          <line>12</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
