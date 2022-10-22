@@ -5,19 +5,18 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
 
-    static final String FILE_NAME = "/home/damian/Java/TaskManager/tasks.csv";
+public class Main {
+    static String[][] tasks;
+    static final String FILE_NAME = "tasks.csv";
     static final String[] OPTIONS = {"add", "remove", "list", "exit"};
 
     public static void main(String[] args) {
-        String[][] tasks = loadDataToTab("FILE_NAME");
-         printOptions(OPTIONS);
+        tasks = loadDataToTab(FILE_NAME);
+        printOptions(OPTIONS);
 
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNextLine()) {
@@ -28,7 +27,7 @@ public class Main {
                     System.exit(0);
                     break;
                 case "add":
-                    newTask(tasks);
+                    newTask();
                     break;
                 case "remove":
                     break;
@@ -42,6 +41,7 @@ public class Main {
         }
 
     }
+
     public static void printOptions(String[] tab) {
         System.out.println(ConsoleColors.BLUE);
         System.out.println("Please select an option: " + ConsoleColors.RESET);
@@ -49,26 +49,29 @@ public class Main {
             System.out.println(option);
         }
     }
+
     public static String[][] loadDataToTab(String fileName) {
-  String[][] task= new String[0][];
+        String[][] tasks = new String[1][3];
 
         File file = new File(FILE_NAME);
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String singles = scanner.nextLine();
                 String[] words = singles.split(", ");
-                for (int i=0; i< words.length;i++){
+                for (int i = 0; i < words.length; i++) {
 
-                }  task=addNewItem(task,words);
+                }
+                tasks = addNewItem(tasks, words);
             }
-        }
-        catch(FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return task;
+        return tasks;
     }
-    private static String[][] newTask(String[][] task){
-        String[] singleTask=new String[2];
+
+    private static void newTask() {
+        // String [][] tasks=new String[0][3];
+        String[] singleTask = new String[2];
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please add task description");
         String description = scanner.nextLine();
@@ -77,35 +80,35 @@ public class Main {
         System.out.println("Is your task important: true/false");
         String isImportant = scanner.nextLine();
         singleTask = new String[]{description, dueDate, isImportant};
-        task=addNewItem(task,singleTask);
+        tasks=addNewItem(tasks,singleTask);
 
 
-        return task;
-    }
-    public static void printTab(String[][] task) {
+}
+    public static void printTab(String[][] tasks) {
 
-        for (int i = 0; i < task.length; i++) {
+        for (int i = 0; i < tasks.length; i++) {
             System.out.print(i + " : ");
-            for (int j = 0; j < task[i].length; j++) {
-                System.out.print(task[i][j] + " ");
+            for (int j = 0; j < tasks[i].length; j++) {
+                System.out.print(tasks[i][j] + " ");
             }
             System.out.println();
         }
 
     }
-    public static void exit(String[][] task) {
+    public static void exit(String[][] tasks) {
 
-        Path newFilePath = Paths.get("FILE_NAME");
+
         String line = null;
-        try (PrintWriter printWriter = new PrintWriter("FILE_NAME")) {
-            for (int i = 0; i < task.length; i++) {
-                line = StringUtils.join(task[i], ", ");
+        try (PrintWriter printWriter = new PrintWriter(FILE_NAME)) {
+            for (int i = 0; i < tasks.length; i++) {
+                line = StringUtils.join(tasks[i], ", ");
                 printWriter.println(line);
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error write to file");
         }
     }
+
     public static String[][] addNewItem(String[][] arr, String[] arr2) {
         arr = Arrays.copyOf(arr, arr.length + 1);
         arr[arr.length - 1] = arr2;
