@@ -12,11 +12,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    static final String FILE_NAME = "tasks.csv";
+    static final String FILE_NAME = "/home/damian/Java/TaskManager/tasks.csv";
     static final String[] OPTIONS = {"add", "remove", "list", "exit"};
 
     public static void main(String[] args) {
-        String[][] task = loadDataToTab(FILE_NAME);
+        String[][] tasks = loadDataToTab("FILE_NAME");
          printOptions(OPTIONS);
 
         Scanner scanner = new Scanner(System.in);
@@ -24,16 +24,16 @@ public class Main {
             String input = scanner.nextLine();
             switch (input) {
                 case "exit":
-                    exit(task);
+                    exit(tasks);
                     System.exit(0);
                     break;
                 case "add":
-                    newTask(task);
+                    newTask(tasks);
                     break;
                 case "remove":
                     break;
                 case "list":
-                    printTab(task);
+                    printTab(tasks);
                     break;
                 default:
                     System.out.println("Please select a correct option.");
@@ -55,8 +55,8 @@ public class Main {
         File file = new File(FILE_NAME);
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
-                String singleline = scanner.nextLine();
-                String[] words = singleline.split(", ");
+                String singles = scanner.nextLine();
+                String[] words = singles.split(", ");
                 for (int i=0; i< words.length;i++){
 
                 }  task=addNewItem(task,words);
@@ -68,7 +68,7 @@ public class Main {
         return task;
     }
     private static String[][] newTask(String[][] task){
-        //   String[][] task=new String[0][];
+        String[] singleTask=new String[2];
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please add task description");
         String description = scanner.nextLine();
@@ -76,7 +76,7 @@ public class Main {
         String dueDate = scanner.nextLine();
         System.out.println("Is your task important: true/false");
         String isImportant = scanner.nextLine();
-        String[] singleTask={description,dueDate,isImportant};
+        singleTask = new String[]{description, dueDate, isImportant};
         task=addNewItem(task,singleTask);
 
 
@@ -95,9 +95,9 @@ public class Main {
     }
     public static void exit(String[][] task) {
 
-        Path newFilePath = Paths.get("task.csv");
+        Path newFilePath = Paths.get("FILE_NAME");
         String line = null;
-        try (PrintWriter printWriter = new PrintWriter("task.csv")) {
+        try (PrintWriter printWriter = new PrintWriter("FILE_NAME")) {
             for (int i = 0; i < task.length; i++) {
                 line = StringUtils.join(task[i], ", ");
                 printWriter.println(line);
