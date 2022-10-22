@@ -110,12 +110,13 @@ public class Main {
         }
     }
     public static String[][] removeRecord(String[][] tasks){
+        String[][] task=new  String[0][3];
         Scanner scanner=new Scanner(System.in);
         System.out.println("Please tape number to remove");
         String number=scanner.nextLine();
         int numbe=Integer.parseInt(number);
-        tasks= ArrayUtils.remove(tasks,numbe);
-        return tasks;
+        task = ArrayUtils.remove(tasks, numbe);
+        return task;
     }
 
     public static String[][] addNewItem(String[][] arr, String[] arr2) {
