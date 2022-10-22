@@ -42,7 +42,6 @@ public class Main {
             }
             printOptions(OPTIONS);
         }
-
     }
 
     public static void printOptions(String[] tab) {
@@ -61,9 +60,10 @@ public class Main {
             while (scanner.hasNextLine()) {
                 String singles = scanner.nextLine();
                 String[] words = singles.split(", ");
-                for (int i = 0; i < words.length; i++) {
+                for (int i = 0; i < words.length; i++){}
 
-                }
+                //dodac klamre
+                // bez klamerki wyświetla 26 raz.
                 tasks = addNewItem(tasks, words);
             }
         } catch (FileNotFoundException e) {
@@ -110,13 +110,17 @@ public class Main {
         }
     }
     public static void removeRecord(){
-       String[][] tasknew = new  String[0][0];
+      // String[][] tasknew = new  String[0][0];
         Scanner scanner=new Scanner(System.in);
         System.out.println("Please tape number to remove");
         String record=scanner.nextLine();
         int number =Integer.parseInt(record);
-        tasknew = ArrayUtils.remove(tasks, number);
+        tasks = ArrayUtils.remove(tasks, number);
+            for (String[] task : tasks) {
+               addNewItem(tasks,task);
+        }
        // for (int i=0;i< tasknew.length;i++) {
+
       //     tasks = addNewItem(tasknew, tasknew[i]);
       //  }
 
