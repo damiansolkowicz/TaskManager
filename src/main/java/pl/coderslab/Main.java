@@ -31,7 +31,7 @@ public class Main {
                     newTask();
                     break;
                 case "remove":
-                    removeRecord(tasks);
+                    removeRecord();
                     System.out.println("Task was removed");
                     break;
                 case "list":
@@ -54,7 +54,7 @@ public class Main {
     }
 
     public static String[][] loadDataToTab(String fileName) {
-        String[][] tasks = new String[1][3];
+        String[][] tasks = new String[0][3];
 
         File file = new File(FILE_NAME);
         try (Scanner scanner = new Scanner(file)) {
@@ -109,19 +109,18 @@ public class Main {
             System.out.println("Error write to file");
         }
     }
-    public static String[][] removeRecord(String[][] tasks){
-        String[][] tasknew=new  String[0][3];
+    public static void removeRecord(){
+       String[][] tasknew = new  String[0][0];
         Scanner scanner=new Scanner(System.in);
         System.out.println("Please tape number to remove");
-        String number=scanner.nextLine();
-        int numbe=Integer.parseInt(number);
-        tasks = ArrayUtils.remove(tasks, numbe);
-        for(int i=0;i< tasks.length;i++) {
-            tasknew = addNewItem(tasknew, tasks[i]);
-        }
-        tasknew=tasks;
-        return tasks;
-    }
+        String record=scanner.nextLine();
+        int number =Integer.parseInt(record);
+        tasknew = ArrayUtils.remove(tasks, number);
+       // for (int i=0;i< tasknew.length;i++) {
+      //     tasks = addNewItem(tasknew, tasknew[i]);
+      //  }
+
+  }
 
     public static String[][] addNewItem(String[][] arr, String[] arr2) {
         arr = Arrays.copyOf(arr, arr.length + 1);

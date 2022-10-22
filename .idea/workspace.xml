@@ -85,7 +85,7 @@
       <workItem from="1666382740690" duration="2244000" />
       <workItem from="1666384993172" duration="1471000" />
       <workItem from="1666386473688" duration="25000" />
-      <workItem from="1666386507787" duration="15363000" />
+      <workItem from="1666386507787" duration="19482000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1666376100287</created>
@@ -164,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666433549064</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="v5">
+      <created>1666434274677</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666434274677</updated>
+    </task>
+    <task id="LOCAL-00013" summary="v5">
+      <created>1666434542258</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666434542258</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +213,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java</url>
           <line>12</line>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
