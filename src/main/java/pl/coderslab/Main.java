@@ -16,7 +16,7 @@ public class Main {
     static final String[] OPTIONS = {"add", "remove", "list", "exit"};
 
     public static void main(String[] args) {
-        tasks = loadDataToTab(FILE_NAME);
+        tasks= loadDataToTab(FILE_NAME);
         printOptions(OPTIONS);
 
         Scanner scanner = new Scanner(System.in);
@@ -52,7 +52,7 @@ public class Main {
         }
     }
 
-    public static String[][] loadDataToTab(String fileName) {
+    public static String[][] loadDataToTab(String fileName) {// zrobić na void
         String[][] tasks = new String[0][3];
 
         File file = new File(FILE_NAME);
@@ -62,7 +62,6 @@ public class Main {
                 String[] words = singles.split(", ");
                 for (int i = 0; i < words.length; i++){}
 
-                //dodac klamre
                 // bez klamerki wyświetla 26 raz.
                 tasks = addNewItem(tasks, words);
             }
@@ -116,15 +115,13 @@ public class Main {
         String record=scanner.nextLine();
         int number =Integer.parseInt(record);
         tasks = ArrayUtils.remove(tasks, number);
-            for (String[] task : tasks) {
-               addNewItem(tasks,task);
         }
        // for (int i=0;i< tasknew.length;i++) {
 
       //     tasks = addNewItem(tasknew, tasknew[i]);
       //  }
 
-  }
+  //}
 
     public static String[][] addNewItem(String[][] arr, String[] arr2) {
         arr = Arrays.copyOf(arr, arr.length + 1);
