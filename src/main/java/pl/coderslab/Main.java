@@ -72,7 +72,7 @@ public class Main {
     }
 
     private static void newTask() {
-        // String [][] tasks=new String[0][3];
+
         String[] singleTask = new String[2];
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please add task description");
@@ -108,20 +108,15 @@ public class Main {
             System.out.println("Error write to file");
         }
     }
-    public static void removeRecord(){
-      // String[][] tasknew = new  String[0][0];
+    public static void removeRecord(){;
         Scanner scanner=new Scanner(System.in);
         System.out.println("Please tape number to remove");
         String record=scanner.nextLine();
         int number =Integer.parseInt(record);
         tasks = ArrayUtils.remove(tasks, number);
         }
-       // for (int i=0;i< tasknew.length;i++) {
 
-      //     tasks = addNewItem(tasknew, tasknew[i]);
-      //  }
 
-  //}
 
     public static String[][] addNewItem(String[][] arr, String[] arr2) {
         arr = Arrays.copyOf(arr, arr.length + 1);

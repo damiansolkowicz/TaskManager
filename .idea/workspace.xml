@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37152662-60fb-4479-8043-3df9307d40c4" name="Changes" comment="v5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.csv" afterDir="false" />
-    </list>
+    <list default="true" id="37152662-60fb-4479-8043-3df9307d40c4" name="Changes" comment="v6" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +83,7 @@
       <workItem from="1666386473688" duration="25000" />
       <workItem from="1666386507787" duration="25762000" />
       <workItem from="1666642090701" duration="24000" />
+      <workItem from="1666706925969" duration="765000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1666376100287</created>
@@ -193,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666448931099</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="v6">
+      <created>1666707070938</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1666707070938</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +220,8 @@
     <MESSAGE value="v3" />
     <MESSAGE value="v4" />
     <MESSAGE value="v5" />
-    <option name="LAST_COMMIT_MESSAGE" value="v5" />
+    <MESSAGE value="v6" />
+    <option name="LAST_COMMIT_MESSAGE" value="v6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -225,6 +230,15 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/coderslab/Main.java</url>
+          <line>17</line>
+          <properties class="pl.coderslab.Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
